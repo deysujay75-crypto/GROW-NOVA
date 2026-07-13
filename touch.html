@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Grow Nova India - Premium Digital Curation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        luxuryWhite: '#ffffff',
+                        luxuryGray: '#f1f3f5',
+                        darkText: '#0e1117',
+                        goldAccent: '#b89447',
+                        mutedText: '#454b54'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #0e1117;
+            scroll-behavior: smooth;
+        }
+        
+        /* Premium Global Fade In Scroll Animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                        transform 1s cubic-bezier(0.215, 0.610, 0.355, 1);
+            will-change: opacity, transform;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Unique Luxury Letter Reveal Effects */
+        .reveal-text span {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            display: inline-block;
+        }
+        .fade-in-section.visible .reveal-text span {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Premium Smooth UX Card Interactions */
+        .about-card {
+            transition: transform 0.4s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                        box-shadow 0.4s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                        border-color 0.4s ease;
+            will-change: transform, box-shadow;
+        }
+        .about-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 60px rgba(14, 17, 23, 0.04);
+            border-color: rgba(184, 148, 71, 0.35);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased">
+
+    <!-- Premium Minimal Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-darkText/10">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold tracking-[0.2em] text-darkText">
+                GROW NOVA<span class="text-goldAccent">.</span>
+            </a>
+            
+            <div class="hidden lg:flex space-x-8 text-xs font-semibold tracking-[0.15em] items-center text-mutedText">
+                <a href="index.html" class="hover:text-darkText transition-colors">HOME</a>
+                <a href="work.html" class="hover:text-darkText transition-colors">WORK</a>
+                <a href="services.html" class="hover:text-darkText transition-colors">SERVICES</a>
+                <a href="careers.html" class="hover:text-darkText transition-colors">CAREERS</a>
+                <a href="faq.html" class="hover:text-darkText transition-colors">FAQ</a>
+                <a href="blog.html" class="hover:text-darkText transition-colors">BLOG</a>
+                <a href="contact.html" class="border border-darkText text-darkText hover:bg-darkText hover:text-white px-5 py-2 rounded-sm transition-all duration-300 flex items-center gap-2">
+                    GET IN TOUCH <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+            
+            <button id="menu-btn" class="lg:hidden text-xl focus:outline-none text-darkText" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars-staggered" id="menu-icon"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-menu" class="lg:hidden bg-white border-b border-darkText/10 px-6">
+            <div class="py-6 space-y-4 text-sm font-medium tracking-widest">
+                <a href="index.html" class="block text-mutedText hover:text-darkText">HOME</a>
+                <a href="work.html" class="block text-mutedText hover:text-darkText">WORK</a>
+                <a href="services.html" class="block text-mutedText hover:text-darkText">SERVICES</a>
+                <a href="careers.html" class="block text-mutedText hover:text-darkText">CAREERS</a>
+                <a href="faq.html" class="block text-mutedText hover:text-darkText">FAQ</a>
+                <a href="blog.html" class="block text-mutedText hover:text-darkText">BLOG</a>
+                <a href="contact.html" class="block text-center border border-darkText text-darkText py-2 rounded-sm mt-4">GET IN TOUCH</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-48 pb-20 bg-white relative">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(184,148,71,0.03),transparent_60%)]"></div>
+        <div class="max-w-5xl mx-auto text-center px-6 relative z-10 space-y-4">
+            <span class="text-xs uppercase tracking-[0.4em] font-semibold text-goldAccent block">Corporate Identity</span>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl text-darkText font-normal tracking-tight leading-tight">
+                Architecting culture. <br><span class="italic font-light text-goldAccent">Engineered from India.</span>
+            </h1>
+            <p class="text-mutedText text-sm md:text-base max-w-2xl mx-auto font-normal leading-relaxed tracking-wide pt-2">
+                GrowNova is an influencer marketing agency headquartered in India. We dismantle standard manual marketing methodologies to build data-driven conversion matrices for modern enterprises.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 2: Genesis / Operational Blueprint -->
+    <section class="py-32 bg-luxuryGray border-y border-darkText/10 px-6 fade-in-section">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            <div class="md:col-span-4">
+                <span class="text-xs uppercase tracking-[0.3em] text-goldAccent font-bold block mb-2">The Genesis</span>
+                <h2 class="font-serif text-2xl md:text-3xl text-darkText">The Evolution of Influence.</h2>
+            </div>
+            <div class="md:col-span-8 text-mutedText text-sm md:text-base space-y-6 leading-relaxed tracking-wide">
+                <p>
+                    Founded with a high-conviction mandate, GrowNova entered the subcontinental ecosystem to correct a critical failure point in traditional digital outreach: the reliance on empty vanity metrics.
+                </p>
+                <p>
+                    We built our infrastructure around clear data verification parameters. By establishing strict content pacing rules, deep regional tracking integrations, and direct backend attribution interfaces, we have systematically transformed consumer attention across India into a structured, trackable financial asset loop.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Leadership Matrix (Compact & Elegant Profile Layout) -->
+    <section class="py-32 px-6 max-w-5xl mx-auto fade-in-section">
+        <div class="text-center mb-24 space-y-2">
+            <span class="text-xs uppercase tracking-[0.3em] text-goldAccent font-bold">Governance</span>
+            <h2 class="font-serif text-3xl md:text-5xl text-darkText">Leadership</h2>
+            <p class="text-mutedText text-xs md:text-sm max-w-md mx-auto leading-relaxed">The strategic architects guiding our subcontinental deployment and performance ecosystems.</p>
+        </div>
+
+        <div class="space-y-16">
+            
+            <!-- Leader 01: Sujay Dey -->
+            <div class="p-8 border border-darkText/10 rounded-sm bg-white shadow-sm flex flex-col md:flex-row gap-8 items-start md:items-center group about-card">
+                <!-- Compact Square Photo Wrapper -->
+                <div class="w-32 h-32 md:w-40 md:h-40 bg-luxuryGray border border-darkText/10 p-2 rounded-sm overflow-hidden flex-shrink-0 mx-auto md:mx-0 shadow-inner relative">
+                    <div class="w-full h-full overflow-hidden flex items-center justify-center">
+                        <img src="sujay.png" alt="Sujay Dey - Co-Founder" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                </div>
+                
+                <div class="flex-1 space-y-3 text-center md:text-left">
+                    <div class="flex flex-col md:flex-row justify-between items-center md:items-baseline gap-1">
+                        <h3 class="font-serif text-2xl font-normal text-darkText tracking-tight">Sujay Dey</h3>
+                        <span class="text-xs font-semibold text-goldAccent uppercase tracking-widest bg-luxuryGray px-3 py-1 rounded-full">Co-Founder</span>
+                    </div>
+                    <p class="text-mutedText text-xs md:text-sm leading-relaxed font-normal">
+                        Oversees our macro client governance frameworks and institutional scale strategy setups. Mandates data integrity metrics across all performance sectors, steering our major enterprise campaign pipelines cleanly.
+                    </p>
+                    <div class="pt-2 border-t border-darkText/5 flex justify-center md:justify-start gap-6 text-xs font-bold tracking-wider text-darkText">
+                        <a href="#" target="_blank" class="hover:text-goldAccent transition-colors flex items-center gap-1.5"><i class="fa-brands fa-linkedin-in text-[11px]"></i> LinkedIn</a>
+                        <a href="mailto:info.grownova@gmail.com" class="hover:text-goldAccent transition-colors flex items-center gap-1.5"><i class="fa-solid fa-envelope text-[11px]"></i> info.grownova@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leader 02: Shoumik Banik -->
+            <div class="p-8 border border-darkText/10 rounded-sm bg-white shadow-sm flex flex-col md:flex-row gap-8 items-start md:items-center group about-card">
+                <!-- Compact Square Photo Wrapper -->
+                <div class="w-32 h-32 md:w-40 md:h-40 bg-luxuryGray border border-darkText/10 p-2 rounded-sm overflow-hidden flex-shrink-0 mx-auto md:mx-0 shadow-inner relative">
+                    <div class="w-full h-full overflow-hidden flex items-center justify-center">
+                        <img src="shoumik.png" alt="Shoumik Banik - Co-Founder" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                    </div>
+                </div>
+                
+                <div class="flex-1 space-y-3 text-center md:text-left">
+                    <div class="flex flex-col md:flex-row justify-between items-center md:items-baseline gap-1">
+                        <h3 class="font-serif text-2xl font-normal text-darkText tracking-tight">Shoumik Banik</h3>
+                        <span class="text-xs font-semibold text-goldAccent uppercase tracking-widest bg-luxuryGray px-3 py-1 rounded-full">Co-Founder</span>
+                    </div>
+                    <p class="text-mutedText text-xs md:text-sm leading-relaxed font-normal">
+                        Directs our automated system architecture, content distribution filters, and live attribution dashboard infrastructure. Guides product affinity matching matrices to protect brand allocation spending.
+                    </p>
+                    <div class="pt-2 border-t border-darkText/5 flex justify-center md:justify-start gap-6 text-xs font-bold tracking-wider text-darkText">
+                        <a href="https://www.linkedin.com/in/shoumik-banik-48758b392?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="hover:text-goldAccent transition-colors flex items-center gap-1.5"><i class="fa-brands fa-linkedin-in text-[11px]"></i> LinkedIn</a>
+                        <a href="mailto:shoumikbanik11@gmail.com" class="hover:text-goldAccent transition-colors flex items-center gap-1.5"><i class="fa-solid fa-envelope text-[11px]"></i> shoumikbanik11@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 4: Deep Operational Pillars -->
+    <section class="py-32 bg-luxuryGray border-y border-darkText/10 px-6 fade-in-section">
+        <div class="max-w-5xl mx-auto space-y-12">
+            <div class="text-center space-y-2">
+                <span class="text-xs uppercase tracking-[0.3em] text-goldAccent font-bold">The Standards</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-darkText font-normal">Our Institutional Commitments</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+                <div class="p-8 bg-white border border-darkText/10 rounded-sm space-y-3 shadow-sm">
+                    <span class="text-xs font-bold text-goldAccent tracking-widest block reveal-text">01. ZERO FRAUD COMPLIANCE</span>
+                    <p class="text-mutedText text-xs md:text-sm leading-relaxed font-normal">
+                        We actively deploy automated bot and artificial engagement isolation tracking scripts to shield our corporate partnerships from metric inflation anomalies.
+                    </p>
+                </div>
+                <div class="p-8 bg-white border border-darkText/10 rounded-sm space-y-3 shadow-sm">
+                    <span class="text-xs font-bold text-goldAccent tracking-widest block reveal-text">02. NATIVE RETENTION HOOKING</span>
+                    <p class="text-mutedText text-xs md:text-sm leading-relaxed font-normal">
+                        Every localized piece of content is shaped directly by internal editorial pacing templates, maximizing customer viewer retention across subcontinental platforms.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Brand Communications & Contact Us Sub-matrix -->
+    <section class="py-32 px-6 max-w-5xl mx-auto fade-in-section">
+        <div class="text-center mb-16 space-y-2">
+            <span class="text-xs uppercase tracking-[0.3em] text-goldAccent font-bold">Direct Channels</span>
+            <h2 class="font-serif text-3xl md:text-5xl text-darkText">Contact Us</h2>
+            <p class="text-mutedText text-xs md:text-sm max-w-md mx-auto leading-relaxed">Reach out directly through our instant communication nodes for rapid alignment diagnostics.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- WhatsApp Node -->
+            <a href="https://wa.me/917908677949" target="_blank" class="p-8 border border-darkText/10 rounded-sm bg-white text-center about-card block space-y-4">
+                <div class="text-emerald-600 text-3xl"><i class="fa-brands fa-whatsapp"></i></div>
+                <h4 class="font-serif text-xl font-normal text-darkText">WhatsApp</h4>
+                <p class="text-mutedText text-xs leading-relaxed">Initiate real-time consulting or operational text dispatches directly with our desk.</p>
+                <span class="text-[11px] font-bold text-darkText block tracking-wider pt-2 border-t border-darkText/5">+91 79086 77949</span>
+            </a>
+
+            <!-- Official Gmail Node -->
+            <a href="mailto:info.grownova@gmail.com" class="p-8 border border-darkText/10 rounded-sm bg-white text-center about-card block space-y-4">
+                <div class="text-red-500 text-3xl"><i class="fa-solid fa-envelope"></i></div>
+                <h4 class="font-serif text-xl font-normal text-darkText">Gmail Office</h4>
+                <p class="text-mutedText text-xs leading-relaxed">Transmit campaign parameter documentation, RFP lists, or general contract queries.</p>
+                <span class="text-[11px] font-bold text-darkText block tracking-wider pt-2 border-t border-darkText/5">info.grownova@gmail.com</span>
+            </a>
+
+            <!-- Instagram Node -->
+            <a href="https://www.instagram.com/grownovamarketingagency?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="p-8 border border-darkText/10 rounded-sm bg-white text-center about-card block space-y-4">
+                <div class="text-pink-600 text-3xl"><i class="fa-brands fa-instagram"></i></div>
+                <h4 class="font-serif text-xl font-normal text-darkText">Instagram DM</h4>
+                <p class="text-mutedText text-xs leading-relaxed">Connect directly through social pipelines for network validation briefings.</p>
+                <span class="text-[11px] font-bold text-darkText block tracking-wider pt-2 border-t border-darkText/5">@grownova</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Typography Manifesto Statement & CTA -->
+    <section class="py-40 bg-darkText text-white text-center px-6 relative fade-in-section">
+        <div class="max-w-4xl mx-auto space-y-8">
+            <i class="fa-solid fa-quote-left text-3xl text-goldAccent/40 block"></i>
+            <p class="font-serif text-2xl md:text-5xl font-light italic leading-snug text-neutral-200">
+                "We don't trace temporary trends. We engineer permanent cultural authority across the Indian marketplace."
+            </p>
+            <div class="w-16 h-[1px] bg-goldAccent mx-auto pt-2"></div>
+            <div class="pt-8">
+                <a href="contact.html" class="bg-white hover:bg-neutral-200 text-darkText font-medium tracking-widest text-xs uppercase px-10 py-5 transition-all duration-300 rounded-sm inline-block shadow-lg">
+                    Partner With Our Desk <i class="fa-solid fa-arrow-right-long ml-2 text-[10px] text-goldAccent"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classic Sophisticated Footer -->
+    <footer class="bg-white border-t border-darkText/10 py-16 px-6 text-center text-xs text-mutedText tracking-widest space-y-6">
+        <p class="font-bold tracking-[0.3em] text-darkText text-sm">GROW NOVA</p>
+        <div class="flex justify-center space-x-8 text-sm text-darkText/70">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/grow-nova/" target="_blank" rel="noopener noreferrer" class="hover:text-goldAccent transition-colors" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/grownovamarketingagency?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="hover:text-goldAccent transition-colors" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@GrowNova" target="_blank" rel="noopener noreferrer" class="hover:text-goldAccent transition-colors" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+        <p class="text-[10px] text-darkText/40 font-normal tracking-normal">&copy; 2026 Grow Nova India. Premium Digital Curation. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            menuIcon.className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars-staggered";
+        });
+
+        // Advanced Intersection Observer Engine for Fading & Letter Splitting Reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeSections = document.querySelectorAll('.fade-in-section');
+            const textReveals = document.querySelectorAll('.reveal-text');
+
+            // Split typography parameters systematically for premium stagger reveals
+            textReveals.forEach(el => {
+                const text = el.innerText;
+                el.innerHTML = '';
+                text.split('').forEach((char, idx) => {
+                    const span = document.createElement('span');
+                    span.innerText = char === ' ' ? '\u00A0' : char; 
+                    span.style.transitionDelay = `${idx * 0.03}s`;
+                    el.appendChild(span);
+                });
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.08 }); 
+
+            fadeSections.forEach(s => observer.observe(s));
+        });
+    </script>
+</body>
+</html>
